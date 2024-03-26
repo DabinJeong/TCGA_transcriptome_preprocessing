@@ -64,6 +64,9 @@ process Merge{
         exp_merged.dropna(inplace=True)
 
         exp_merged.to_csv("TPM_${params.cancer_type}.merged.tsv".format(),sep='\t')
+
+	exp_merged_scaled = np.log10(exp_merged+1)
+	exp_merged_scaled.to_csv("TPM_${params.cancer_type}.merged.logP_norm.tsv".format(),sep='\t')
         """
 }
 
