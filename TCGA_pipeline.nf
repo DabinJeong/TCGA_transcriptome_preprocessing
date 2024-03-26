@@ -43,6 +43,7 @@ process Merge{
         output:
                 publishDir
                 file "TPM_${params.cancer_type}.merged.tsv"
+		file "TPM_${params.cancer_type}.merged.logP_norm.tsv"
         shell:
         """
         #!/usr/bin/env python
